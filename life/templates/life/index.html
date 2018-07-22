@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-		<title></title>
+		<title>Index</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static '/life/vendor/bootstrap/css/bootstrap.css' %}" />
@@ -15,6 +15,11 @@
 	</head>
 	<body>
 		<!-- Your layout here -->
+    
+    {% for user in ecousers %}
+      <p>{{ user.username }}</p>
+    {% endfor %}
+
 
 	</body>
 </html>
