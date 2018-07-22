@@ -10,5 +10,8 @@ class EcoAction(models.Model):
 
 class EcoUser(User): # extend Django's built in User model, which already has username + password
   eco_actions = models.ManyToManyField(EcoAction)
-  points_earned = eco_actions.count * 10 # TO DO: figure out how to calculate on the fly...
-    
+
+  @property
+  def points_earned():
+    return eco_actions.all().count() * 10
+ 
