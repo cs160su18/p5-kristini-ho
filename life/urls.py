@@ -9,5 +9,7 @@ urlpatterns = [
     # http://p5-kristini-ho-kristinho836388.codeanyapp.com:8000/life/ecousers/
     path('ecousers/',views.ecousers, name='ecousers'), 
     path('input/',views.ecoactions, name='ecoactions'), 
+    path('login/',views.login, name='login'), 
+    path('output/',views.output, name='output'), 
 
 ]

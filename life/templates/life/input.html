@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Input</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/life/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/life/css/main.css' %}" />
+
+		<script src="{% static '/life/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/life/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+	</head>
+	<body>
+
+    
+<!--     TO DO: replace "User!" with the logged in user -->
+    <p> Welcome, User! Select all rewardable actions performed today.</p>
+    
+    <div>
+      {% for action in ecoactions %}
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="ecoActionSelection">
+          <label class="form-check-label" for="ecoActionSelection">{{ action }}</label>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <p></p>
+    
+     <button type="submit" class="btn btn-primary">Submit</button>
+
+	</body>
+</html>

@@ -13,4 +13,10 @@ def ecoactions(request):
   all_actions = EcoAction.objects.all()
   return render(request, 'life/input.html', {"ecoactions": all_actions})
 
+def login(request):
+  return render(request, 'life/login.html', {})
+
+def output(request):
+  return render(request, 'life/output.html', {})
+
 
