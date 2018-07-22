@@ -8,7 +8,7 @@ class EcoAction(models.Model):
   point_value = models.IntegerField()
   
   def __str__(self):
-    return self.action_name
+    return self.action_name + ' (' + str(self.point_value) + ' ' + 'pts)'
 
 class EcoUser(User): 
   """ Extends Django's built in User model, which already has properties such as
