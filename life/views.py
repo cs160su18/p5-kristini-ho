@@ -18,6 +18,12 @@ def login(request):
   return render(request, 'life/accounts/login.html', {}, RequestContext(request))
 
 def output(request):
-  return render(request, 'life/output.html', {})
+  current_user = request.user
+  name = current_user.first_name + ' ' + current_user.last_name
+  eco_user = EcoUser.objects.filter(user=current_user)[0]
+  eco_actions = eco_user.eco_actions.all()
+  points = str(eco_user.points_earned)
+  return render(request, 'life/output.html', {"name": name, "points": points, "currentuser": current_user, "ecoactions": eco_actions})
+
 
 

@@ -16,16 +16,22 @@
 	<body>
 		<!-- Your layout here -->
     
-    <p>
-      Congrats, User! You have earned 100 points in your last visit.
-    </p>
-    
-    <p>
+    <h3>
+      Congrats, {{name}}! You have earned {{points}} points in your last visit.
+    </h3>
+    <h3>
       Actions taken this trip:
-    </p>
+    </h3>
     
-   <!--   TO DO: - Display First/Last name from passed in user
-                - Show this user's total points
+     {% for action in ecoactions %}
+      <p>{{ action }}</p>
+    {% endfor %}
+
+    
+    
+    
+   <!--   TO DO: - Display First/Last name from currently logged in User
+                - Show this user's total points (get the EcoUser, then get points)
                 - Show this user's action list -->
     
     

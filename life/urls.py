@@ -11,7 +11,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('ecousers/',views.ecousers, name='ecousers'), 
     path('input/',views.ecoactions, name='ecoactions'), 
-#     path('login/',views.login_page, name='login'), 
     path('output/',views.output, name='output'), 
     path('accounts/', include('django.contrib.auth.urls')),
   
