@@ -10,14 +10,15 @@ class EcoAction(models.Model):
   def __str__(self):
     return self.action_name + ' (' + str(self.point_value) + ' ' + 'pts)'
 
-class EcoUser(User): 
-  """ Extends Django's built in User model, which already has properties such as
+class EcoUser(models.Model): 
+  """ Connected to Django's User model, which already has properties such as
   username and password."""
   
   eco_actions = models.ManyToManyField(EcoAction)  
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
   
   def __str__(self):
-    return self.first_name + ' ' + self.last_name
+    return 'username: ' + self.user.username + ', name: ' + self.user.first_name + ' ' + self.user.last_name
   
   @property
   def points_earned(self):

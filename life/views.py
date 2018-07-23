@@ -14,9 +14,8 @@ def ecoactions(request):
   all_actions = EcoAction.objects.all()
   return render(request, 'life/input.html', {"ecoactions": all_actions})
 
-def login_page(request):
-  return render(request, 'life/login.html', {})
-
+def login(request):
+  return render(request, 'life/accounts/login.html', {}, RequestContext(request))
 
 def output(request):
   return render(request, 'life/output.html', {})
